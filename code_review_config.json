@@ -1,0 +1,12 @@
+{
+    "base_oid": "b0b3cc8e0a63f35369b234e2f645eea08fda9ebb",
+    "head_oid": "b7ec01de99204a67567c3c259a2c99122c45da19",
+    "file_paths": [
+        "README.md",
+        "code.rb"
+    ],
+    "categories": [
+        "secrets",
+        "codereview"
+    ]
+}

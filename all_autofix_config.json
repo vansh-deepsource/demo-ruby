@@ -1,0 +1,14 @@
+[
+  {
+    "issue_id": "1",
+    "file_path": "README.md",
+    "issue_title": "Hardcoded secret",
+    "issue_text": "A token has been added to a URL in `README.md`. Committing secrets to a repository is a major security risk, as it can be used by malicious actors to gain unauthorized access to services.\n\nRemove the token from the URL. If a token is required, it should be managed through repository secrets, not hardcoded.",
+    "start_line": 23,
+    "end_line": 23,
+    "fix_steps": "1. In `README.md`, find the following markdown link: `[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true&token=GUiSpAVeA3v_yYb35jVt0I1V)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n2. Remove the token parameter `&token=GUiSpAVeA3v_yYb35jVt0I1V` from the image URL.\n3. The corrected line should be: `[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n4. This change reverts the URL to its previous state, removing the exposed secret and mitigating the security risk.",
+    "feedback": null,
+    "patch_infos": null,
+    "use_stream": true
+  }
+]
