@@ -1,50 +1,24 @@
 [
-    {
-        "comments": [
-            {
-                "file_path": "README.md",
-                "start_line": 23,
-                "end_line": 23,
-                "issue_title": "Hardcoded Sensitive Token",
-                "issue_description": "Hardcoded token exposes sensitive credentials in a public file",
-                "comment": "A sensitive token is hardcoded in the DeepSource badge URL. Exposing tokens in public files like `README.md` can lead to unauthorized access to DeepSource account data, potentially compromising project security and exposing analysis results.\n\nRemove the token from the URL. If the badge requires authentication, it should be configured securely through repository settings or secrets, not by embedding credentials in public content.",
-                "fix_steps": "In the file `README.md`, locate the following line:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true&token=GUiSpAVeA3v_yYb35jVt0I1V)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nRemove the `&token=GUiSpAVeA3v_yYb35jVt0I1V` query parameter from the URL. The corrected line should be:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nThis change removes the hardcoded secret token from the public `README.md` file, mitigating the security risk of unauthorized access.",
-                "fix_effort_score": 1,
-                "category": "secrets",
-                "severity": "critical",
-                "dimension": "security",
-                "locations_of_interest": [
-                    {
-                        "identifier_name": "GUiSpAVeA3v_yYb35jVt0I1V",
-                        "definition": null,
-                        "usages": [
-                            {
-                                "file_path": "README.md",
-                                "start_line": 23,
-                                "end_line": 23
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "comments": [
-            {
-                "file_path": "code.rb",
-                "start_line": 26,
-                "end_line": 28,
-                "issue_title": "Redundant else clause",
-                "issue_description": "An empty `else` block is redundant and should be removed",
-                "comment": "The `else` block is empty and provides no functionality, making the code unnecessarily verbose. This can be confusing to developers who might wonder if logic was intended to be there.\n\nRemove the `else` clause to make the code more concise and readable. If no action is needed when the condition is false, the `else` is not required.",
-                "fix_steps": "In `code.rb`, modify the `if` statement as follows:\n1. Locate the code block:\n```ruby\nif bar\nelse\nend\n```\n2. Remove the line containing `else`. The resulting code should be:\n```ruby\nif bar\nend\n```\nThis change removes the redundant empty `else` clause, making the code more concise.",
-                "fix_effort_score": 1,
-                "category": "antipattern",
-                "severity": "minor",
-                "dimension": "hygiene",
-                "locations_of_interest": []
-            }
-        ]
-    }
+  {
+    "comments": [
+      {
+        "file_path": "README.md",
+        "start_line": 23,
+        "end_line": 23,
+        "issue_title": "Hardcoded sensitive token",
+        "issue_description": "Hardcoded token in URL exposes sensitive information.",
+        "issue_detail": "The `token` parameter in the DeepSource badge URL appears to contain a hardcoded secret. Committing secrets to version control is a security risk, as it can be exposed to anyone with read access to the repository.",
+        "comment": "A token has been hardcoded in the `README.md` file. Exposing a private token publicly in a repository is a significant security risk, as it could be used by malicious actors to gain unauthorized access to DeepSource project data.\n\nIt is strongly recommended to remove this token from the URL. The exposed token should also be revoked immediately to prevent any potential misuse.",
+        "fix_steps": "In `README.md`, locate the following line:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true&token=GUiSpAVeA3v_yYb35jVt0I1V)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nReplace it with:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nThis removes the hardcoded token from the URL. The exposed token should be revoked from the DeepSource dashboard as a security precaution.",
+        "fix_effort_score": 1,
+        "category": "secrets",
+        "severity": "critical",
+        "dimension": "security",
+        "impact_score": 10,
+        "impact_rationale": "High probability (publicly visible), severe impact (potential unauthorized access), quick fix (remove token) -> high ROI.",
+        "locations_of_interest": []
+      }
+    ]
+  },
+  { "comments": [] }
 ]
