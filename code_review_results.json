@@ -1,24 +1,30 @@
 [
-  {
-    "comments": [
-      {
-        "file_path": "README.md",
-        "start_line": 23,
-        "end_line": 23,
-        "issue_title": "Hardcoded sensitive token",
-        "issue_description": "Hardcoded token in URL exposes sensitive information.",
-        "issue_detail": "The `token` parameter in the DeepSource badge URL appears to contain a hardcoded secret. Committing secrets to version control is a security risk, as it can be exposed to anyone with read access to the repository.",
-        "comment": "A token has been hardcoded in the `README.md` file. Exposing a private token publicly in a repository is a significant security risk, as it could be used by malicious actors to gain unauthorized access to DeepSource project data.\n\nIt is strongly recommended to remove this token from the URL. The exposed token should also be revoked immediately to prevent any potential misuse.",
-        "fix_steps": "In `README.md`, locate the following line:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true&token=GUiSpAVeA3v_yYb35jVt0I1V)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nReplace it with:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nThis removes the hardcoded token from the URL. The exposed token should be revoked from the DeepSource dashboard as a security precaution.",
-        "fix_effort_score": 1,
-        "category": "secrets",
-        "severity": "critical",
-        "dimension": "security",
-        "impact_score": 10,
-        "impact_rationale": "High probability (publicly visible), severe impact (potential unauthorized access), quick fix (remove token) -> high ROI.",
-        "locations_of_interest": []
-      }
-    ]
-  },
-  { "comments": [] }
+    {
+        "comments": [
+          {
+            "file_path": "README.md",
+            "start_line": 23,
+            "end_line": 23,
+            "issue_title": "Hardcoded sensitive token",
+            "issue_description": "Hardcoded token in URL exposes sensitive information.",
+            "issue_detail": "The `token` parameter in the DeepSource badge URL appears to contain a hardcoded secret. Committing secrets to version control is a security risk, as it can be exposed to anyone with read access to the repository.",
+            "comment": "A token has been hardcoded in the `README.md` file. Exposing a private token publicly in a repository is a significant security risk, as it could be used by malicious actors to gain unauthorized access to DeepSource project data.\n\nIt is strongly recommended to remove this token from the URL. The exposed token should also be revoked immediately to prevent any potential misuse.",
+            "fix_steps": "In `README.md`, locate the following line:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true&token=GUiSpAVeA3v_yYb35jVt0I1V)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nReplace it with:\n`[![DeepSource](https://deepsource.io/gh/deepsourcelabs/demo-ruby.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/deepsourcelabs/demo-ruby/?ref=repository-badge)`\n\nThis removes the hardcoded token from the URL. The exposed token should be revoked from the DeepSource dashboard as a security precaution.",
+            "fix_effort_score": 1,
+            "category": "secrets",
+            "severity": "critical",
+            "dimension": "security",
+            "impact_score": 10,
+            "impact_rationale": "High probability (publicly visible), severe impact (potential unauthorized access), quick fix (remove token) -> high ROI.",
+            "locations_of_interest": []
+          }
+        ],
+        "ai_overview": "This is a focused change that correctly updates the badge URL in the documentation.",
+        "file_path": "README.md"
+    },
+    {
+        "comments": [],
+        "ai_overview": "",
+        "file_path": "code.rb"
+    }
 ]
